@@ -5,8 +5,6 @@ import yelp from "../api/yelp";
 function Results({ route }) {
     const { id } = route.params;
     const [result, setResult] = useState(null)
-
-    console.log(result)
     const getResult = async (id) => {
         const response = await yelp.get(`/${id}`)
         setResult(response.data)
